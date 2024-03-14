@@ -1,0 +1,29 @@
+<div class="container mx-auto mt-4">
+  <div #jitsiMeetElement id="jitsiMeetElement">
+  </div>
+
+  <div class="d-flex gap-2 p-2  bg-body-secondary">
+    <button (click)="toggleAudio()" [class]="[isAudioMuted ? 'btn-success' : 'btn-danger']" class="btn">
+      {{ isAudioMuted ? 'Unmute' : 'Mute' }}
+    </button>
+    <button
+      (click)="toggleVideo()" [class]="[isVideoMuted ? 'btn-success': 'btn-danger' ]" class="btn"
+    >
+      {{ isVideoMuted ? 'Enable camera' : 'Disable camera' }}
+    </button>
+    <button (click)="hangup()" class="btn btn-danger ms-auto">Hangup</button>
+  </div>
+  <div>
+
+  </div>
+  <div class="d-flex mt-4 gap-4">
+    <div class="d-flex flex-column p-2 bg-body-secondary w-50 card ">
+      <div>
+        <label class="form-label fw-bold">Display name</label>
+        <input [(ngModel)]="displayName" class="form-control" />
+      </div>
+      <button (click)="setDisplayName()" class="btn btn-primary mt-1">SET</button>
+    </div>
+  </div>
+
+</div>
